@@ -19,6 +19,9 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		mTxtStopCode = (EditText) this.findViewById(R.id.txtStopCode);
+		mTxtBusRoute = (EditText) this.findViewById(R.id.txtRouteNumber);
+		mTxtDirection = (EditText) this.findViewById(R.id.txtDirection);
 	}
 
 	@Override
@@ -34,11 +37,16 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	private void sendSMS(String stopCode, String busCode, String direction) {
-		String message = stopCode + " " + busCode + " " + direction;
-		SmsManager sms = SmsManager.getDefault();
-		sms.sendTextMessage(OC_TRANSPO_PHONE, null, message, null, null);
-		Log.d("test", "message sent");
-		Toast.makeText(this, "Text Sent", Toast.LENGTH_SHORT).show();
+		String message = (stopCode + " " + busCode + " " + direction).trim();
+
+		if (message.length() > 0) {
+			SmsManager sms = SmsManager.getDefault();
+			sms.sendTextMessage(OC_TRANSPO_PHONE, null, message, null, null);
+			Log.d("test", "message sent");
+			Toast.makeText(this, "Sent: " + message, Toast.LENGTH_SHORT).show();
+		} else {
+			Toast.makeText(this, "Nothing to send", Toast.LENGTH_SHORT).show();
+		}
 	}
 
 }
