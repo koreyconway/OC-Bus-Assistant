@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">OC Bus Assistant</string>
+    <string name="app_name">OC•Transpo Assistant</string>
     <string name="action_settings">Settings</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="bus_stop_code">Bus Stop Code</string>
+    <string name="route_number">Route Number</string>
+    <string name="direction">Direction</string>
+    <string name="send_text">Get Times by Text</string>
+    <string name="direction_value_1">1</string>
+    <string name="direction_value_2">2</string>
 
 </resources>
