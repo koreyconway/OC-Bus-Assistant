@@ -1,23 +1,20 @@
 package org.sgnexus.octranspoassistant;
 
-import org.sgnexus.octranspoassistant.R;
-
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.telephony.SmsManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
 	private static final String OC_TRANSPO_PHONE = "560-560";
 	private static final int BUS_STOP_CODE_MAX_LENGTH = 4;
 	private EditText mTxtStopCode;
